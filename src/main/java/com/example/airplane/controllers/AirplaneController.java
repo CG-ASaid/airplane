@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 import java.util.List;
 
+//TODO: Logic in services package if enough time
+
 @RestController
 @RequestMapping("/api/airplanes")
 public class AirplaneController {
@@ -22,6 +24,7 @@ public class AirplaneController {
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     public Airplane createAirplane(Airplane airplane) {
+        airplane.setFuel(5);
         this.airplaneRepository.save(airplane);
         return airplane;
     }

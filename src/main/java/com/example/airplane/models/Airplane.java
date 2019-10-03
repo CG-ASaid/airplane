@@ -15,9 +15,20 @@ public class Airplane {
     private int fuel;
     private String model;
 
-    public Airplane(int fuel, String model) {
-        this.fuel = fuel;
+    public Airplane() {
+    }
+
+    public Airplane(String model) {
+        this.fuel = 5;
         this.model = model;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public int getFuel() {
