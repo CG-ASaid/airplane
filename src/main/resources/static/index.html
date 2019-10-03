@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>I believe I can fly</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" />
+</head>
+
+<body>
+<br>
+    <div class="container">
+
+        <div class=“row”>
+            <div class=“col-md-12”>
+                <button type="button" data-toggle="modal" data-target="#newAirplaneModal">New Airplane</button>
+            </div>
+        </div>  
+
+        <div class=“row”>
+            <div class=“col-md-12”>
+                <h2>Airplanes</h2>
+                <table id="table">
+                    <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Model</th>
+                        <th>Location</th>
+                        <th>Fuel units remaining</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- New Airplane Modal -->
+        <div id="newAirplaneModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+            
+                <!-- Content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">New Airplane</h4>
+                    </div>
+
+                    <div class="modal-body">
+
+                        <form data-toggle="validator" role="form" id="newBookForm" onsubmit="return false;">
+                            <div class="form-group">
+                                <label for="inputTitle" class="control-label">Model name</label>
+                                <input type="text" class="form-control" id="inputModel" placeholder="Enter a model name" data-error="???" required>
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button id="closeButton" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+        <!-- End of new Airplane Modal -->
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
