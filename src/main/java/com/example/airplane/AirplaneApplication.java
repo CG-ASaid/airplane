@@ -21,6 +21,7 @@ public class AirplaneApplication {
 		this.airplaneRepository = airplaneRepository;
 	}
 
+	//Fill database with first airplane (free of charge!)
 	@EventListener(ApplicationReadyEvent.class)
 	public void onStart() {
 		Airplane airplane = new Airplane("Boeing 727");
