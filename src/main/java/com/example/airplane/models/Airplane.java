@@ -14,6 +14,7 @@ public class Airplane {
 
     private int fuel;
     private String model;
+    private Location location;
 
     public Airplane() {
     }
@@ -45,5 +46,13 @@ public class Airplane {
 
     public void setModel(String model) {
         this.model = model;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
     }
 }

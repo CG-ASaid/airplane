@@ -7,4 +7,5 @@ public enum Location {
     PARIS,
     STOCKHOLM,
     BERLIN
+
 }

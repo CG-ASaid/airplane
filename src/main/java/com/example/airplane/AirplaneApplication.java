@@ -1,6 +1,7 @@
 package com.example.airplane;
 
 import com.example.airplane.models.Airplane;
+import com.example.airplane.models.Location;
 import com.example.airplane.repositories.AirplaneRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -23,6 +24,7 @@ public class AirplaneApplication {
 	@EventListener(ApplicationReadyEvent.class)
 	public void onStart() {
 		Airplane airplane = new Airplane("Boeing 727");
+		airplane.setLocation(Location.AMSTERDAM);
 		this.airplaneRepository.save(airplane);
 	}
 
