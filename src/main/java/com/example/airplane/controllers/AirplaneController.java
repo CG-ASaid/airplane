@@ -21,6 +21,7 @@ public class AirplaneController {
     public AirplaneController() {
     }
 
+    //Create a new airplane, starting location Amsterdam
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     public Airplane createAirplane(@RequestBody Airplane airplane) {
         airplane.setFuel(5);
@@ -29,6 +30,7 @@ public class AirplaneController {
         return airplane;
     }
 
+    //Get a list of airplanes
     @RequestMapping(value = "/retrieveAll", method = RequestMethod.GET)
     public Iterable<Airplane> getAll() {
         return this.airplaneRepository.findAll();
@@ -48,6 +50,20 @@ public class AirplaneController {
                 this.airplaneRepository.save(airplane);
                 return airplane;
             }
+        }
+
+        throw new NotFoundException();
+    }
+
+    @RequestMapping(value = "/refuel/{id}", method = RequestMethod.PUT)
+    public Airplane refuel(@PathVariable Long id) {
+        Optional<Airplane> oAirplane = this.airplaneRepository.findById(id);
+
+        if (oAirplane.isPresent()) {
+            Airplane airplane = oAirplane.get();
+            airplane.setFuel(5);
+            this.airplaneRepository.save(airplane);
+            return airplane;
         }
 
         throw new NotFoundException();

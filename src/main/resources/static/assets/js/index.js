@@ -56,8 +56,9 @@ $(document).ready(function () {
             { "data": "id" },
             { "data": "model" },
             { "data": "location" },
-            { "data": "fuel"}
-        ]
+            { "data": "fuel"},
+        ],
+        
     });
 
     // Load first data.
